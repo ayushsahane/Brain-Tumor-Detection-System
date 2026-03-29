@@ -1,0 +1,384 @@
+:root{
+  --bg:#eef5fb;
+  --card:#ffffff;
+  --text:#16324a;
+  --muted:#587187;
+  --primary:#0f6fa8;
+  --primary-dark:#0b4f79;
+  --accent:#ff6b81;
+  --border:#d5e6f3;
+}
+
+/* Base */
+html, body, [data-testid="stAppViewContainer"], .stApp{
+  background: var(--bg) !important;
+  color: var(--text);
+  font-family: "Inter","Segoe UI","Helvetica Neue",Arial,sans-serif;
+}
+.block-container{
+  max-width: 1200px;
+  padding-top: 1.2rem !important;
+  padding-bottom: 2rem !important;
+}
+
+/* Remove dark Streamlit top leftovers */
+[data-testid="stHeader"]{ background: transparent !important; }
+[data-testid="collapsedControl"]{ display: none; }
+
+/* Hero banner (like reference image) */
+.hero-banner{
+  position: relative;
+  border-radius: 20px;
+  padding: 2rem 2rem;
+  min-height: 220px;
+  overflow: hidden;
+  border: 1px solid #0f4f78;
+  box-shadow: 0 14px 30px rgba(7,52,82,.25);
+  background:
+    linear-gradient(110deg, rgba(7,61,97,.95) 0%, rgba(10,78,122,.92) 45%, rgba(17,110,168,.85) 100%),
+    radial-gradient(circle at 80% 20%, rgba(255,107,129,.28) 0%, rgba(255,107,129,0) 40%);
+}
+
+.hero-banner::after{
+  content: "";
+  position: absolute;
+  right: -80px;
+  top: -40px;
+  width: 340px;
+  height: 340px;
+  transform: rotate(16deg);
+  border-radius: 28px;
+  background: linear-gradient(135deg, #dff4ff 0%, #c6e8fb 100%);
+  border: 6px solid #f77f92;
+  opacity: .22;
+}
+
+/* Highly visible title */
+.hero-title{
+  position: relative;
+  z-index: 2;
+  color: #ffffff !important;
+  font-size: 2.1rem;
+  line-height: 1.12;
+  font-weight: 900;
+  letter-spacing: .01em;
+  margin-bottom: .45rem;
+  text-shadow: 0 2px 10px rgba(0,0,0,.25);
+}
+
+.hero-sub{
+  position: relative;
+  z-index: 2;
+  color: #e5f4ff !important;
+  font-size: 1.02rem;
+  max-width: 760px;
+  font-weight: 500;
+}
+
+/* Optional badge */
+.hero-badge{
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+  margin-top: .8rem;
+  padding: .35rem .7rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.45);
+  color: #eaf6ff;
+  font-weight: 700;
+  font-size: .86rem;
+  background: rgba(255,255,255,.08);
+}
+
+/* Content headings */
+.stMarkdown h1, .stMarkdown h2, .stMarkdown h3,
+.stMarkdownContainer h1, .stMarkdownContainer h2, .stMarkdownContainer h3{
+  color: #0d4f76;
+}
+.stMarkdown p, .stCaption{ color: var(--text); }
+.stCaption{ color: var(--muted) !important; }
+
+/* Labels */
+.stSelectbox label, .stSlider label, .stFileUploader label{
+  color: #17445f !important;
+  font-weight: 700 !important;
+}
+
+/* Buttons */
+div[class="row-widget stButton"]{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.stButton button{
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark)) !important;
+  color: #f4fbff !important;
+  border: none !important;
+  border-radius: 999px !important;
+  padding: .74rem 1.5rem !important;
+  font-weight: 800 !important;
+  box-shadow: 0 10px 24px rgba(15,111,168,.30);
+}
+.stButton button:hover{
+  transform: translateY(-1px) scale(1.02);
+}
+
+/* Select + uploader */
+[data-baseweb="select"]{
+  border-radius: 12px !important;
+}
+[data-testid="stFileUploaderDropzone"]{
+  background: #f8fcff !important;
+  border: 1.5px dashed #9dc9e3 !important;
+  border-radius: 14px !important;
+}
+
+/* Images */
+[data-testid="stImage"] img{
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  box-shadow: 0 8px 20px rgba(10,40,70,.10);
+}
+
+/* Metric cards */
+.metric-card{
+  background: var(--card);
+  border: 1px solid #dcecf8;
+  border-radius: 16px;
+  padding: .9rem 1rem;
+  box-shadow: 0 10px 22px rgba(10,65,100,.10);
+}
+.metric-title{
+  color:#285570;
+  font-size:.9rem;
+  font-weight:700;
+}
+.metric-value{
+  color:#0f5d89;
+  font-size:1.24rem;
+  font-weight:900;
+}
+.metric-caption{
+  color:var(--muted);
+  font-size:.78rem;
+  margin-top:.2rem;
+}
+
+/* Confusion matrix */
+.conf-matrix{
+  display:grid;
+  grid-template-columns: repeat(2,minmax(110px,1fr));
+  gap:.5rem;
+  margin-top:.35rem;
+}
+.conf-cell{
+  background:#f4fbff;
+  border:1px solid #cfe3f2;
+  border-radius:10px;
+  padding:.5rem;
+  text-align:center;
+  font-weight:700;
+  color:#18425f;
+}
+
+/* Hide unused card */
+#ghcard-oct4pie-1{ display:none; }
+
+/* Fix legacy title visibility from title.html */
+h1 {
+  color: #0e3f5f !important;   /* dark blue */
+  text-shadow: none !important;
+}
+
+/* If title.html wraps text in custom classes/spans */
+.title, .title-text, .main-title {
+  color: #0e3f5f !important;
+}
+
+/* Force color for legacy title HTML ("Brain Tumor Detection Using CNN") */
+div[data-testid="stIFrame"] + div h1,
+div[data-testid="stIFrame"] + div h2,
+div[data-testid="stIFrame"] + div p,
+[data-testid="stAppViewContainer"] h1 {
+  color: #0f3f5f !important;
+  text-shadow: none !important;
+}
+
+/* If title.html has white inline style, override all text in first block after iframe */
+div[data-testid="stIFrame"] + div * {
+  color: #0f3f5f !important;
+}
+
+/* Make top Menu dropdown match Analyze style */
+[data-baseweb="select"] > div{
+  background: linear-gradient(135deg, #0f6fa8, #0b4f79) !important;
+  border: none !important;
+  border-radius: 14px !important;
+  box-shadow: 0 10px 24px rgba(15,111,168,.30) !important;
+}
+[data-baseweb="select"] *{
+  color: #f4fbff !important;
+  font-weight: 700 !important;
+}
+
+/* Dropdown popup options */
+div[role="listbox"]{
+  background: #eaf6ff !important;
+  border: 1px solid #9cc7e2 !important;
+}
+div[role="option"]{
+  color: #103e5c !important;
+  font-weight: 600 !important;
+}
+div[role="option"][aria-selected="true"]{
+  background: #cfe8f9 !important;
+}
+
+/* "Browse files" button match Analyze */
+[data-testid="stFileUploader"] button,
+[data-testid="stFileUploader"] section button,
+[data-testid="stFileUploaderDropzone"] button{
+  background: linear-gradient(135deg, #0f6fa8, #0b4f79) !important;
+  color: #f4fbff !important;
+  border: none !important;
+  border-radius: 999px !important;
+  padding: .62rem 1.2rem !important;
+  font-weight: 800 !important;
+  box-shadow: 0 10px 24px rgba(15,111,168,.30) !important;
+}
+[data-testid="stFileUploader"] button:hover,
+[data-testid="stFileUploaderDropzone"] button:hover{
+  transform: translateY(-1px) scale(1.02);
+}
+
+/* Hide menu label safely (no click-block) */
+div[data-testid="stSelectbox"] > label {
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Ensure selectbox itself stays clickable */
+[data-baseweb="select"]{
+  position: relative !important;
+  z-index: 50 !important;
+}
+
+/* Dropdown popup panel (opened options) */
+div[role="listbox"]{
+  background: linear-gradient(135deg, #0f6fa8 0%, #0b4f79 100%) !important;
+  border: 1px solid #2f7eaf !important;
+  border-radius: 12px !important;
+  box-shadow: 0 12px 26px rgba(15, 111, 168, 0.35) !important;
+  overflow: hidden !important;
+}
+
+/* Each option in opened dropdown */
+div[role="option"]{
+  background: transparent !important;
+  color: #eaf6ff !important;
+  font-weight: 600 !important;
+}
+
+/* Hover option */
+div[role="option"]:hover{
+  background: rgba(255,255,255,0.14) !important;
+  color: #ffffff !important;
+}
+
+/* Selected option */
+div[role="option"][aria-selected="true"]{
+  background: rgba(255,255,255,0.22) !important;
+  color: #ffffff !important;
+}
+
+
+
+/* FORCE BaseWeb dropdown menu colors */
+body div[data-baseweb="popover"] ul,
+body div[data-baseweb="popover"] [role="listbox"],
+body [data-baseweb="select"] [role="listbox"]{
+  background: linear-gradient(135deg, #0f6fa8 0%, #0b4f79 100%) !important;
+  border: 1px solid #2f7eaf !important;
+  border-radius: 12px !important;
+  box-shadow: 0 12px 26px rgba(15,111,168,.35) !important;
+}
+
+/* option rows */
+body div[data-baseweb="popover"] li,
+body div[data-baseweb="popover"] [role="option"]{
+  background: transparent !important;
+  color: #eaf6ff !important;
+  font-weight: 600 !important;
+}
+
+/* hover/focus */
+body div[data-baseweb="popover"] li:hover,
+body div[data-baseweb="popover"] [role="option"]:hover,
+body div[data-baseweb="popover"] [aria-selected="true"]{
+  background: rgba(255,255,255,.18) !important;
+  color: #ffffff !important;
+}
+
+/* Better readable warning alert */
+div[data-baseweb="notification"][kind="warning"],
+.stWarning,
+[data-testid="stAlert"] {
+  background: #fff4cc !important;           /* soft yellow */
+  border-left: 6px solid #f59e0b !important; /* orange accent */
+  border-radius: 12px !important;
+  box-shadow: 0 6px 18px rgba(0,0,0,.08) !important;
+}
+
+/* Warning text */
+div[data-baseweb="notification"][kind="warning"] *,
+.stWarning * {
+  color: #7a4a00 !important;   /* dark readable brown */
+  font-weight: 700 !important;
+  font-size: 1rem !important;
+}
+
+/* ===== THEMED ERROR BOX (blue theme, high visibility) ===== */
+.element-container .stError,
+div[data-baseweb="notification"][kind="error"]{
+  background: linear-gradient(135deg, #e8f4ff 0%, #d9ecff 100%) !important;
+  border-left: 6px solid #0f6fa8 !important;
+  border: 1px solid #9fcbed !important;
+  border-radius: 12px !important;
+  box-shadow: 0 8px 22px rgba(15,111,168,.20) !important;
+  padding: 14px 16px !important;
+}
+
+/* Error text clearly visible */
+.element-container .stError *,
+div[data-baseweb="notification"][kind="error"] *{
+  color: #0b3d5c !important;
+  font-weight: 700 !important;
+  font-size: 1rem !important;
+  opacity: 1 !important;
+}
+
+/* ADD THIS BLOCK AT THE END OF YOUR EXISTING CSS */
+.info-blue-box{
+  background: linear-gradient(135deg, rgba(15,111,168,.13) 0%, rgba(11,79,121,.11) 100%);
+  border: 1px solid #9cc7e2;
+  border-left: 6px solid #0f6fa8;
+  border-radius: 14px;
+  padding: 12px 14px;
+  margin: 12px 0 8px 0;
+  box-shadow: 0 8px 20px rgba(15,111,168,.12);
+}
+.info-blue-title{
+  color: #0b4f79;
+  font-weight: 800;
+  font-size: .92rem;
+  margin-bottom: 4px;
+}
+.info-blue-text{
+  color: #123f5f;
+  font-weight: 600;
+  font-size: .95rem;
+  line-height: 1.55;
+}
