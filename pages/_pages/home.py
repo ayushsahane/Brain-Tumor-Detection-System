@@ -57,7 +57,21 @@ def main():
         <div class='hero-banner'>
           <div class='hero-title'>Brain Tumor Detection System</div>
           <div class='hero-sub'>Doctor-friendly AI support for MRI scan triage and interpretation</div>
-          <div class='hero-badge'>MRI Clinical Support • CNN Based</div>
+
+          <div class='hero-badge' style="
+              display:inline-block;
+              margin-top:10px;
+              padding:7px 16px;
+              border-radius:999px;
+              font-weight:700;
+              font-size:0.88rem;
+              color:#ffffff;
+              background: linear-gradient(135deg, #1aa3b2 0%, #1f6feb 100%);
+              box-shadow: 0 6px 16px rgba(12, 99, 140, 0.35);
+              border: 1px solid rgba(255,255,255,0.25);
+          ">
+            MRI Clinical Support • CNN Based
+          </div>
 
           <div style="margin-top:14px;color:#d9ecfa;font-size:0.95rem;max-width:760px;line-height:1.6;">
             Brain tumors are abnormal growths of cells in or around the brain. Early screening on MRI scans
