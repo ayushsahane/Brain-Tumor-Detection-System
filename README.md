@@ -12,7 +12,7 @@ A beginner‑friendly, end‑to‑end Streamlit app for brain tumor classificati
 
 ---
 
-## ✅ What this project does
+## What this project does
 - Takes a **2D MRI image** as input
 - Crops the brain region automatically
 - Runs a **CNN model** to classify **Tumor / No Tumor**
@@ -20,7 +20,7 @@ A beginner‑friendly, end‑to‑end Streamlit app for brain tumor classificati
 
 ---
 
-## 🚀 Quick Start (Beginner Friendly)
+## Quick Start (Beginner Friendly)
 
 > **Recommended Python:** 3.10 or 3.11 (TensorFlow is most stable on these)
 
@@ -98,14 +98,14 @@ weighted avg       1.00      1.00      1.00       400
 
 ---
 
-## 🧪 How to Use the App
+##  How to Use the App
 - Use **pre‑loaded samples** or upload your own MRI image
 - The app crops the brain region automatically
 - You receive a **Tumor / No Tumor prediction** with confidence
 
 ---
 
-## 🧰 Project Structure
+##  Project Structure
 ```
 ├── README.md
 ├── app.py                    # Streamlit entry point
@@ -139,7 +139,7 @@ weighted avg       1.00      1.00      1.00       400
 
 ---
 
-## 📘 Beginner‑Friendly Glossary
+##  Beginner‑Friendly Glossary
 - **CNN (Convolutional Neural Network):** A neural network specialized for images.
 - **MRI (Magnetic Resonance Imaging):** Medical imaging technique for brain scans.
 - **Threshold:** Value that decides Tumor vs No Tumor (0–1 probability).
@@ -147,21 +147,21 @@ weighted avg       1.00      1.00      1.00       400
 
 ---
 
-## ⚠️ Common Issues & Fixes
+##  Common Issues & Fixes
 
-### ✅ `ImportError: numpy.core.umath failed to import`
+###  `ImportError: numpy.core.umath failed to import`
 Use compatible NumPy:
 ```bash
 pip install "numpy<2"
 ```
 
-### ✅ `ModuleNotFoundError: No module named 'cv2'`
+###  `ModuleNotFoundError: No module named 'cv2'`
 Install OpenCV:
 ```bash
 pip install opencv-python
 ```
 
-### ✅ Streamlit opens but errors show from Anaconda
+###  Streamlit opens but errors show from Anaconda
 Run using the virtual environment:
 ```bash
 source venv/bin/activate
@@ -170,7 +170,7 @@ python -m streamlit run app.py
 
 ---
 
-## 📚 Acknowledgements
+##  Acknowledgements
 - [Brain Tumor Classification (MRI)](https://www.kaggle.com/sartajbhuvaji/brain-tumor-classification-mri)
 - [Brain MRI Images for Brain Tumor Detection](https://www.kaggle.com/navoneel/brain-mri-images-for-brain-tumor-detection)
 - [MRI Based Brain Tumor Images](https://www.kaggle.com/mhantor/mri-based-brain-tumor-images)
@@ -178,5 +178,5 @@ python -m streamlit run app.py
 
 ---
 
-## ✅ License
+##  License
 This project is for educational and research purposes. Use responsibly.
